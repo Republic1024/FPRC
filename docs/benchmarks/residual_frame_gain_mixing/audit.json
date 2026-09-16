@@ -1,0 +1,60 @@
+{
+  "panel_rows": 7928060,
+  "panel_min_date": "2018-01-02",
+  "panel_max_date": "2026-07-08",
+  "selected_Q": [
+    "volatility_20d",
+    "netprofit_yoy",
+    "ocf_to_profit",
+    "profit_stability"
+  ],
+  "q_mean_coverage": 0.9390091766696899,
+  "frozen_axes": [
+    "turnover_rank",
+    "turnover_rank",
+    "turnover_rank"
+  ],
+  "baseline_target_sharpe": 2.089498162097059,
+  "field_average_input_max_abs": 0.0,
+  "fprc_backbone_reproduction_max_abs": 7.450580596923828e-09,
+  "baseline_signal_reproduction_max_abs": 0.0,
+  "prior_direct_other_signal_reproduction_max_abs": 1.4901161193847656e-08,
+  "prior_direct_other_alignment": true,
+  "fallback_2023_max_abs": 0.0,
+  "strict_rows": 3666920,
+  "strict_dates": 844,
+  "offdiag_receiver_weights_before_frame_W": [
+    0.5,
+    0.5
+  ],
+  "candidate_parameters": {
+    "base": {
+      "gamma": 1.0,
+      "alpha": 0.0
+    },
+    "gain2": {
+      "gamma": 2.0,
+      "alpha": 0.0
+    },
+    "norm_do": {
+      "gamma": 1.0,
+      "alpha": 0.5
+    },
+    "direct_other": {
+      "gamma": 2.0,
+      "alpha": 0.5
+    },
+    "pure_other": {
+      "gamma": 1.0,
+      "alpha": 1.0
+    }
+  },
+  "factorial_interaction_net_pct": 0.5387012044710389,
+  "active_missing_predictions": {
+    "gain2": 0,
+    "norm_do": 0,
+    "direct_other": 0,
+    "pure_other": 0
+  },
+  "wall_seconds": 151.41801071166992
+}
