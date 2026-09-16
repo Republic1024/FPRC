@@ -38,8 +38,8 @@ FPRC 不是一组只能在研究脚本中运行的公式。本项目提供独立
 设 `r_{s,t}` 是股票 s 在信号日期 t 对应的未来收益标签；第 m 块田的父因子为 `A_m,B_m`。默认使用每日截面排名，将两个坐标分别分成 K=10 档：
 
 $$
-a_{m,s,t}=\operatorname{bin}_K(A_{m,s,t}),\qquad
-b_{m,s,t}=\operatorname{bin}_K(B_{m,s,t}),
+a_{m,s,t}=\mathrm{bin}_K(A_{m,s,t}),\qquad
+b_{m,s,t}=\mathrm{bin}_K(B_{m,s,t}),
 $$
 
 $$
@@ -61,13 +61,13 @@ $$
 T_c=\frac{\mu_c-\mu_0}
 {\sqrt{\max(v_c,10^{-12})/\max(n_c,1)}},
 \qquad
-\operatorname{conf}_c=
+\mathrm{conf}_c=
 \mathbf1\{n_c\ge n_{\min}\}
 \frac{1}{1+\exp(2-|T_c|)},
 $$
 
 $$
-\boxed{F_m(s,t)=\mu_{c_{m,s,t}}^{EB}\operatorname{conf}_{c_{m,s,t}}.}
+\boxed{F_m(s,t)=\mu_{c_{m,s,t}}^{EB}\mathrm{conf}_{c_{m,s,t}}.}
 $$
 
 默认 `n_0=500`、`n_min=100`、半衰期 252 个信号日期。该 confidence 是原研究实现的启发式置信权重，不是校准后的显著性概率。空历史的可用格点为 0，缺失 AB 为 NaN。底层 CellStats 从研究代码原样复制，见[来源与哈希](docs/PROVENANCE.md)。
@@ -79,7 +79,7 @@ $$
 $$
 X_{\mathrm{parents}}=\bigcup_{m=1}^{M}\{A_m,B_m\},
 \qquad
-X_m=(\operatorname{Rank}_t A_m,\operatorname{Rank}_t B_m,
+X_m=(\mathrm{Rank}_t A_m,\mathrm{Rank}_t B_m,
 P_\star^\perp,\mathbf Q^\perp).
 $$
 
@@ -87,10 +87,10 @@ $$
 
 $$
 P_\star^\perp=
-\operatorname{Rank}_t\!\left[
-\operatorname{Rank}_t P-
-\operatorname{OLS}_t(\operatorname{Rank}_t P\mid
-\operatorname{Rank}_t X_{\mathrm{parents}})
+\mathrm{Rank}_t\!\left[
+\mathrm{Rank}_t P-
+\mathrm{OLS}_t(\mathrm{Rank}_t P\mid
+\mathrm{Rank}_t X_{\mathrm{parents}})
 \right].
 $$
 
@@ -98,16 +98,16 @@ Q 的净化条件包含所有父坐标，以及各田单独净化出的局部 P�
 
 $$
 P_{m,\mathrm{local}}^\perp
-=\operatorname{Rank}_t[P-\operatorname{OLS}_t(P\mid A_m,B_m)],
+=\mathrm{Rank}_t[P-\mathrm{OLS}_t(P\mid A_m,B_m)],
 $$
 
 $$
 Q_\ell^\perp=
-\operatorname{Rank}_t\!\left[
-\operatorname{Rank}_t Q_\ell-
-\operatorname{OLS}_t\!\left(
-\operatorname{Rank}_t Q_\ell
-\mid \operatorname{Rank}_t X_{\mathrm{parents}},
+\mathrm{Rank}_t\!\left[
+\mathrm{Rank}_t Q_\ell-
+\mathrm{OLS}_t\!\left(
+\mathrm{Rank}_t Q_\ell
+\mid \mathrm{Rank}_t X_{\mathrm{parents}},
 \{P_{m,\mathrm{local}}^\perp\}_{m=1}^{M}
 \right)\right].
 $$
