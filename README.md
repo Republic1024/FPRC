@@ -2,6 +2,8 @@
 
 **Preserve the fields. Learn their residuals. Close the aggregate.**
 
+Paper Link: https://arxiv.org/abs/2608.07349
+
 一个面向横截面因子研究的结构化学习框架：以可审计的二维因子田为先验，让局部 XGBoost 学习各自的残差，再由共享 XGBoost 对聚合后的新鲜残差完成闭合。**Pure Gain** 保留同一结构，仅将局部修正的总增益从 1 改为 2。
 
 FPRC 不是一组只能在研究脚本中运行的公式。本项目提供独立可安装的 Python 包、时间前推交叉拟合、训练边界审计、分量预测、模型持久化、CPU/CUDA 示例和冻结实验结果快照。
